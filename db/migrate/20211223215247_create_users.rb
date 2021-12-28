@@ -8,6 +8,8 @@ class CreateUsers < ActiveRecord::Migration[6.1]
             t.string :password
             t.datetime :deleted_at
             t.timestamps
+            
+            t.string :nickname
         end
     end
 
