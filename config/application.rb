@@ -1,1 +1,1 @@
-# config.time_zone = 'Eastern Time (US & Canada)'
+config.time_zone = 'Eastern Time (US & Canada)'

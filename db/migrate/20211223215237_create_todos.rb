@@ -3,7 +3,7 @@ class CreateTodos < ActiveRecord::Migration[6.1]
         create_table :todos do |t|
             t.string :title, index: true
             t.text :content
-            t.boolean :status, null: false, default: true, index: true
+            t.datetime :deleted_at
             t.timestamps
             t.references :user, foreign_key: true
             t.references :category, foreign_key: true
