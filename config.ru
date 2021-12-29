@@ -15,3 +15,5 @@ use Rack::JSONBodyParser
 run ApplicationController
 use TodosController
 use CategoriesController
+use StatusesController
+use UsersController

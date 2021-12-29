@@ -10,10 +10,6 @@ class CategoriesController < ApplicationController
             content_type "application/json"
         end
 
-        after do
-            puts "Status Code: ", response.status
-        end
-
         def category
             Category.find_by(id: params[:id])
         end
@@ -34,7 +30,6 @@ class CategoriesController < ApplicationController
             @record.to_json
         end
         
-
         patch "/category/:id" do
             @record = category 
             halt_with_error unless @record
