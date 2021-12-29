@@ -15,24 +15,28 @@ class UsersController < ApplicationController
         end
 
         def halt_with_error
-            halt(404, {message: "Todo Not Found!"}.to_json)
+            halt(404, {message: "User Not Found!"}.to_json)
+        end
+
+        get "/user/all" do
+            halt(200, User.all.to_json)
         end
 
         get "/user/:id" do
-            @record = todo
+            @record = user
             halt_with_error unless @record
             @record.to_json
         end
 
         patch "/user/:id" do
-            @record = todo 
+            @record = user 
             halt_with_error unless @record
             User.update(params[:id], params)
             @record.to_json
         end
 
         delete "/user/:id" do
-            @record = todo
+            @record = user
             halt_with_error unless @record
             @record.destroy
             halt(204, @record.to_json)

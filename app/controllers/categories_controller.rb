@@ -18,6 +18,10 @@ class CategoriesController < ApplicationController
             halt(404, {message: "Todo Not Found!"}.to_json)
         end
 
+        get "/category/all" do
+            halt(200, Category.all.to_json)
+        end
+
         get "/category/:id" do
             @record = category
             halt_with_error unless @record

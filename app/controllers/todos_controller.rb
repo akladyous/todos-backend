@@ -18,6 +18,10 @@ class TodosController < ApplicationController
             halt(404, {message: "Todo Not Found!"}.to_json)
         end
 
+        get "/todo/all" do
+            halt(200, Todo.all.to_json)
+        end
+
         get "/todo/:id" do
             @record = todo
             halt_with_error unless @record
