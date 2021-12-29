@@ -13,7 +13,5 @@ use Rack::JSONBodyParser
 
 # Our application
 run ApplicationController
-use TestController
-use UsersController
 use TodosController
 use CategoriesController
