@@ -1,5 +1,5 @@
-require "sinatra/base"
-require "sinatra/namespace"
+# require "sinatra/base"
+# require "sinatra/namespace"
 
 class UsersController < ApplicationController
     register Sinatra::Namespace

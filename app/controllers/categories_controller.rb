@@ -1,5 +1,5 @@
-require "sinatra/base"
-require "sinatra/namespace"
+# require "sinatra/base"
+# require "sinatra/namespace"
 
 class CategoriesController < ApplicationController
     register Sinatra::Namespace
