@@ -11,6 +11,6 @@ class Status < ActiveRecord::Base
     
     # default_scope { lists }
     
-    status_list = ["Done", "In Progress", "Hold"]
+    status_list = ["Done", "In Progress"]
     validates :status, inclusion: { in: status_list, message: "Invalid Status. Select from #{status_list}" }
 end
