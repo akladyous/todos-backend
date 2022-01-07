@@ -65,11 +65,12 @@ class TodosController < ApplicationController
             halt(200, Todo.month.to_json)
         end
 
-        get "/todo/test" do
+        patch "/todo/status/:id" do
             puts "-> GET Request: todo/test"
-
+            @record = todo
+            @record.status.update(status: params[:status])
+            halt(200, @record.to_json)
         end
-
 
         get "/todo/:id" do
             puts "-> GET Request: todo/:id"
@@ -83,7 +84,7 @@ class TodosController < ApplicationController
             @record = todo 
             halt_with_error unless @record
             Todo.update(params[:id], params)
-            @record.to_json
+            halt(200, @record.to_json)
         end
 
         delete "/todo/:id" do
